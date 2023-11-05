@@ -1,0 +1,9 @@
+<div class="app-container">
+  <!-- <app-header></app-header> -->
+  <div class="main-container">
+    <app-notes-list *ngIf="!hideSideNav" #list [style.display]="(showListScreen)?'block':'none'" (showDetailsScreenCall)="showDetailsScreenCall($event)" ></app-notes-list>
+    <app-note-detail  #detail [style.display]="(showDetailsScreen)?'block':'none'" (showListScreenCall)="showListScreenCall($event)"  ></app-note-detail>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

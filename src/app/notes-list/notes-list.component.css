@@ -1,0 +1,114 @@
+.list-container{
+    background-color: #000000e3;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    /* max-width: 300px; */
+    height: calc( 75vh - 55px );
+    min-width: 250px;
+    border-radius: 10px;   
+
+}
+.add-new-note-btn{
+  background-color: rgb(57, 55, 55);
+  color: #fff;
+  padding: 15px;
+  border: none;
+  /* box-shadow: 0 3px 3px #ccc; */
+  margin: 5px;
+  width: 90%;
+  cursor: pointer;
+  border-radius: 10px;   
+}
+
+@media( max-width: 760px ){
+    .list-container{
+        background-color: #000000e3;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+        max-width: 200px;
+        height: calc( 100vh - 55px );
+        min-width: auto;        
+    }    
+}
+
+@media( max-width: 480px ){
+    .list-container{
+        background-color: #030303e3;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+        max-width: 200px;
+        height: calc( 100vh - 55px );
+        min-width: auto;
+        
+    }    
+}
+
+.search-bar input{
+    border: none;
+    outline: none;
+    /* height: 90%; */
+    margin-left: 25px;
+    /* width: 80%; */
+    border-radius: 5px;
+}
+
+.search-bar{
+    border: 1px solid #eee;
+    padding: 0px 12px 0px 5px;
+    position: relative;
+    /* height: 60%; */
+    border-radius: 5px;
+    vertical-align: middle;
+    background-color: #fff;
+    float: right;
+    top: 9px;
+    right: 20px;
+    /* width: 30%; */
+}
+
+.search-bar mat-icon{
+    /* padding: 5px 0px 0px 2px; */
+    position: absolute;
+    font-size: 20px;
+    margin: 0px 0px 0px 0.5px;
+    background-color: #4a3939;
+    color: #fff;
+    float: left;
+    left: 0;
+    /* height: 75%; */
+}
+
+.search-bar input{
+    border: none;
+    outline: none;
+    /* height: 90%; */
+    margin-left: 25px;
+    /* width: 95%; */
+    border-radius: 5px;
+}
+
+.search-bar{
+    border: 1px solid #eee;
+    padding: 0px 12px 0px 5px;
+    position: relative;
+    /* height: 60%; */
+    border-radius: 5px;
+    vertical-align: middle;
+    background-color: #fff;
+    /* float: right; */
+    top: 9px;
+    /* right: -44px; */
+    /* width: 30%; */
+}
+
+.search-bar input{
+    border: none;
+    outline: none;
+    /* height: 90%; */
+    margin-left: 25px;
+    /* width: 80%; */
+    border-radius: 5px;
+}

@@ -1,0 +1,12 @@
+<div class="note-detail">
+  <span>{{currentDate}}</span>
+  <label>Title</label>
+  <textarea [placeholder]="'Add Title'" (keyup)="textInputHandler()" class="note-textarea-title" #titleTextarea>
+      {{note? note.title: ''}}
+    </textarea>
+  <label>Description</label>
+  <textarea [placeholder]="'Add Description'" (keyup)="textInputHandler()" class="note-textarea" #bodyTextarea>
+      {{note? note.body: ''}}
+    </textarea>
+</div>
+<button class="add-new-note-btn" (click)="saveNote()">Save</button>

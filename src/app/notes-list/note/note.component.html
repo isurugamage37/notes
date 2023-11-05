@@ -1,0 +1,11 @@
+<mat-card class="note" [ngClass]="note.selected? 'selected': ''" (click)="noteClickHandler()">
+    <div class="note-title">{{note.title}}</div>
+    <div class="note-detail">
+      <div class="note-date">
+        {{note.date}}
+      </div>
+      <div class="note-body">
+        {{note.body}}
+      </div>
+    </div>
+  </mat-card>
