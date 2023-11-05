@@ -54,14 +54,14 @@ export class NotesListComponent implements OnInit {
         let currentDate = (new Date().getHours() > 12? new Date().getHours() - 12: new Date().getHours()) + ':'  + new Date().getMinutes() + (new Date().getHours() > 12? ' PM': ' AM');    
         
         this.notesList.forEach(note => note.selected = false);
-        this.notesList.unshift({
-          id: Math.random() * 100,
-          body: '',
-          title: '',
-          date: currentDate,
-          selected: true
-        });
-        this.noteClickHandler(this.notesList[0]);
+        // this.notesList.push({
+        //   id: Math.random() * 100,
+        //   body: '',
+        //   title: '',
+        //   date: currentDate,
+        //   selected: true
+        // });
+        this.noteClickHandler(this.notesList[this.notesList,length-1]);
       }
       localStorage.setItem('notes', JSON.stringify(this.notesList));
     });
