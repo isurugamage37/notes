@@ -53,7 +53,7 @@ export class NotesListComponent implements OnInit {
       if ( data.action === 'addEdit' ) {
         let currentDate = (new Date().getHours() > 12? new Date().getHours() - 12: new Date().getHours()) + ':'  + new Date().getMinutes() + (new Date().getHours() > 12? ' PM': ' AM');    
         
-        this.notesList.forEach(note => note.selected = false);
+        this.notesList = this.notesList.map(note => ({ ...note, selected: false }));
         this.notesList.push({
           id: Math.random() * 100,
           body: '',
