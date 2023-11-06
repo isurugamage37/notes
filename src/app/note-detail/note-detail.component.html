@@ -9,5 +9,5 @@
       {{note? note.body: ''}}
     </textarea>
 </div>
-<button class="add-new-note-btn" (click)="saveNote()" [disabled]="isButtonDisabled">Save</button>
-<button class="add-new-note-btn" (click)="back()">Back</button>
+<button class="save-note-btn" (click)="saveNote()" [disabled]="isButtonDisabled">Save</button>
+<button class="save-note-btn" (click)="back()"  [disabled]="!isButtonDisabled">Back</button>

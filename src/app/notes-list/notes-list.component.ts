@@ -19,9 +19,7 @@ export class NotesListComponent implements OnInit {
   @Output() showDetailsScreenCall = new EventEmitter();
 
   constructor(private notesService: NotesService) {
-    // notesService.clearData();
     this.notesService.clearData();
-    // this.setDummyNote();
    }
 
   ngOnInit() {
@@ -51,7 +49,7 @@ export class NotesListComponent implements OnInit {
           }
       }
       if ( data.action === 'addEdit' ) {
-        let currentDate = (new Date().getHours() > 12? new Date().getHours() - 12: new Date().getHours()) + ':'  + new Date().getMinutes() + (new Date().getHours() > 12? ' PM': ' AM');    
+        let currentDate = (new Date().getHours() > 12? new Date().getHours() - 12: new Date().getHours()) + ':'  + ( new Date().getMinutes() < 10? '0'+ new Date().getMinutes() : new Date().getMinutes() )+ (new Date().getHours() > 12? ' PM': ' AM');    
         
         if (Array.isArray(this.notesList)) {
           this.notesList.forEach(note => note.selected = false);
@@ -89,7 +87,6 @@ export class NotesListComponent implements OnInit {
   }
 
   addNoteHandler(){
-    // this.setDummyNote();
     this.showDetailsScreenCall.emit(true);
     this.notesService.noteAddEditHandler();
   }
@@ -97,7 +94,6 @@ export class NotesListComponent implements OnInit {
   editNoteHandler(){
     this.setDummyNote();
     this.showDetailsScreenCall.emit(true);
-    // this.notesService.noteAddEditHandler();
   }
 
   getSelectedNoteIndex() {
@@ -112,7 +108,6 @@ export class NotesListComponent implements OnInit {
 
   deleteNoteHandler() {
     this.notesService.noteDeleteHandler();
-    // this.selectedNote = false;
   }
 
   noteClickHandler(data: any) {
@@ -146,6 +141,11 @@ export class NotesListComponent implements OnInit {
   searchHandler(inputEl: { value: any; }) {
     this.notesService.searchHandler(inputEl.value);
   }
+
+  showDetailsScreenCallEdit(){
+    this.showDetailsScreenCall.emit(true);
+  }
+  
 
 }
 

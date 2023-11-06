@@ -11,14 +11,6 @@ export class NoteDetailComponent implements OnInit {
   currentDate: string = "";
   isButtonDisabled: boolean = true;
   @Output() showListScreenCall = new EventEmitter();
-
-  monthMap = {
-    0: 'January', 1: 'February', 2: 'March',
-    3: 'April', 4: 'May', 5: 'June',
-    6: 'July', 7: 'August', 8: 'September',
-    9: 'October', 10: 'November', 11: 'December'
-  }
-
   @ViewChild('titleTextarea', { static: true })
   titleTextarea!: ElementRef;
   @ViewChild('bodyTextarea', { static: true })
@@ -62,7 +54,11 @@ export class NoteDetailComponent implements OnInit {
 
   back() {
     this.showListScreenCall.emit(true);
-    this.notesService.noteDeleteHandler();
+    if (this.titleTextarea.nativeElement.value.trim().length > 0 || this.bodyTextarea.nativeElement.value.trim().length > 0 ) {
+    } else {
+      this.notesService.noteDeleteHandler();
+    }
+   
   }
   onInputChange() {
     if (this.titleTextarea.nativeElement.value.trim().length > 0 || this.bodyTextarea.nativeElement.value.trim().length > 0 ) {
