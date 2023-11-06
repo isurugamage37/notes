@@ -1,12 +1,13 @@
 <div class="note-detail">
   <span>{{currentDate}}</span>
   <label>Title</label>
-  <textarea [placeholder]="'Add Title'" (keyup)="textInputHandler()" class="note-textarea-title" #titleTextarea>
+  <textarea [placeholder]="'Add Title'" (keyup)="textInputHandler()" class="note-textarea-title" (input)="onInputChange()" #titleTextarea>
       {{note? note.title: ''}}
     </textarea>
   <label>Description</label>
-  <textarea [placeholder]="'Add Description'" (keyup)="textInputHandler()" class="note-textarea" #bodyTextarea>
+  <textarea [placeholder]="'Add Description'" (keyup)="textInputHandler()" class="note-textarea" (input)="onInputChange()" #bodyTextarea>
       {{note? note.body: ''}}
     </textarea>
 </div>
-<button class="add-new-note-btn" (click)="saveNote()">Save</button>
+<button class="add-new-note-btn" (click)="saveNote()" [disabled]="isButtonDisabled">Save</button>
+<button class="add-new-note-btn" (click)="back()">Back</button>

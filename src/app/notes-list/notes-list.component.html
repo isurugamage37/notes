@@ -5,7 +5,7 @@
   </div>
   <mat-icon class="delete-icon" [ngClass]="selectedNote? 'selected': ''"
     [ngClass]="disableEditing? 'disable-editing': ''" matTooltip='Delete Note'
-    style="margin-left:800px; margin-top:7px;color: aliceblue;" (click)="deleteNoteHandler()">delete </mat-icon>
+    style="margin-left:645px; margin-top:7px;color: aliceblue;" (click)="deleteNoteHandler()">delete </mat-icon>
   <button style="margin-top: 20px;" class="add-new-note-btn" (click)="addNoteHandler()">Add Note </button>
   <button style="margin-top: 20px;" class="add-new-note-btn" [disabled]="searchedNotes().length==0"
     (click)="editNoteHandler()">Edit Note </button>

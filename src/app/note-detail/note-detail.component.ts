@@ -9,6 +9,7 @@ import { NotesService } from '../notes.service';
 export class NoteDetailComponent implements OnInit {
   note: any = null;
   currentDate: string = "";
+  isButtonDisabled: boolean = true;
   @Output() showListScreenCall = new EventEmitter();
 
   monthMap = {
@@ -56,7 +57,19 @@ export class NoteDetailComponent implements OnInit {
 
   saveNote() {
     this.showListScreenCall.emit(true);
+    this.isButtonDisabled = true;
   }
 
+  back() {
+    this.showListScreenCall.emit(true);
+    this.notesService.noteDeleteHandler();
+  }
+  onInputChange() {
+    if (this.titleTextarea.nativeElement.value.trim().length > 0 || this.bodyTextarea.nativeElement.value.trim().length > 0 ) {
+      this.isButtonDisabled = false; 
+    } else {
+      this.isButtonDisabled = true;
+    }
+  }
 
 }
